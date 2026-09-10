@@ -1,0 +1,24 @@
+# Fly terminates TLS at the edge and forwards plain HTTP to this port, so the
+# server itself listens on :8080 without certificates.
+:8080 {
+	root * /srv
+	encode gzip zstd
+	file_server
+
+	# Hashed filenames (index-a1b2c3.js) can be cached forever; the HTML that
+	# references them must not be, or a deploy won't reach anyone.
+	@immutable path /assets/*
+	header @immutable Cache-Control "public, max-age=31536000, immutable"
+	header /index.html Cache-Control "no-cache"
+
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		X-Frame-Options DENY
+	}
+
+	handle_errors {
+		rewrite * /index.html
+		file_server
+	}
+}

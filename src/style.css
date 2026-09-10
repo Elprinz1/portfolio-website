@@ -1,0 +1,226 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+@import '@fontsource-variable/fraunces';
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+  --font-serif: 'Fraunces Variable', ui-serif, Georgia, serif;
+
+  --color-bone: #f4f1ec;
+  --color-bone-deep: #eae5dc;
+  --color-ink: #1a1815;
+  --color-ink-soft: #4a443c;
+  --color-ink-faint: #8a7f70;
+  --color-rust: #a8551f;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background: var(--color-bone);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-rust);
+    color: var(--color-bone);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-rust);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ── Type ───────────────────────────────────────────────────────────────── */
+.serif {
+  font-family: var(--font-serif);
+  font-variation-settings:
+    'SOFT' 0,
+    'WONK' 1,
+    'opsz' 120;
+  letter-spacing: -0.022em;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+.rule {
+  border-top: 1px solid rgba(26, 24, 21, 0.16);
+}
+
+/* ── Oval portrait ──────────────────────────────────────────────────────── */
+/* Fills its frame edge to edge: the ellipse follows the 4:5 box rather than
+   being inscribed in a square. */
+.oval {
+  aspect-ratio: 4 / 5;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.oval > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Marquee ────────────────────────────────────────────────────────────── */
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Desaturated on a light ground so four unrelated brand palettes don't fight;
+   full colour on hover. */
+.logo-mark {
+  height: 2.6rem;
+  width: auto;
+  filter: grayscale(1) contrast(0.85);
+  opacity: 0.55;
+  transition:
+    filter 0.35s ease,
+    opacity 0.35s ease;
+}
+
+/* Stacked lockups (USF) carry two lines of type in the same height a wordmark
+   uses for one, so matching heights makes them read smaller. Give them more. */
+.logo-mark--stacked {
+  height: 3.6rem;
+}
+
+.logo-item:hover .logo-mark {
+  filter: none;
+  opacity: 1;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Nav ────────────────────────────────────────────────────────────────── */
+[data-nav].is-scrolled {
+  background: rgba(244, 241, 236, 0.82);
+  backdrop-filter: blur(14px) saturate(140%);
+  border-bottom-color: rgba(26, 24, 21, 0.14);
+}
+
+[data-navlink] {
+  color: var(--color-ink-soft);
+  transition: color 0.2s ease;
+}
+
+[data-navlink]:hover,
+[data-navlink][aria-current='true'] {
+  color: var(--color-rust);
+}
+
+/* ── Impact grid cells ──────────────────────────────────────────────────── */
+.cell {
+  transition: background-color 0.35s ease;
+}
+
+.cell:hover {
+  background-color: rgba(26, 24, 21, 0.035);
+}
+
+/* ── Reveal (gated on .js so a failed bundle still renders) ─────────────── */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Years-in-data seal ─────────────────────────────────────────────────── */
+/* One metric is worth calling out, and a lone cell in a four-column grid reads
+   as a mistake. Anchoring it to the portrait as a stamp makes it a credential
+   and puts it where the eye already is. */
+.seal {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  width: 8.25rem;
+  height: 8.25rem;
+  border-radius: 50%;
+  background: var(--color-bone);
+  border: 1px solid rgba(26, 24, 21, 0.16);
+  box-shadow: 0 20px 45px -28px rgba(26, 24, 21, 0.55);
+}
+
+@media (max-width: 640px) {
+  .seal {
+    width: 6.75rem;
+    height: 6.75rem;
+  }
+}
+
+/* ── Live badge ─────────────────────────────────────────────────────────── */
+/* Marks the projects that are deployed and clickable, which is the strongest
+   claim this section makes — so it gets the accent colour. */
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  padding: 0.2rem 0.6rem 0.2rem 0.5rem;
+  border: 1px solid rgba(168, 85, 31, 0.35);
+  border-radius: 999px;
+  background: rgba(168, 85, 31, 0.08);
+  color: var(--color-rust);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.live-badge::before {
+  content: '';
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: currentColor;
+}

@@ -1,239 +1,652 @@
-<!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>elprinz portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="icon" type="image/png" href="images/favicon.ico">
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Princewill Egbujor — Senior Data Scientist</title>
+    <meta
+      name="description"
+      content="Senior Data Scientist at Apple. Marketing analytics, product experimentation, and applied generative AI."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta property="og:title" content="Princewill Egbujor — Senior Data Scientist" />
+    <meta
+      property="og:description"
+      content="Marketing analytics, product experimentation, and applied generative AI. Currently at Apple."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./profile-square.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      document.documentElement.classList.add('js')
+    </script>
+  </head>
 
-		<!-- Header -->
-			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/profile_pix.jpg" alt="" /></span>
-					<h1 id="logo"><a href="#">Princewill Egbujor</a></h1>
-					<!-- <p>avid<br />
-					</p> -->
-				</header>
-				<nav id="nav">
-					<ul>
-						<li><a href="#one" class="active">About me</a></li>
-						<li><a href="#two">Skills</a></li>
-						<li><a href="#three">Education</a></li>
-						<li><a href="#four">Projects</a></li>
-						<li><a href="#five">Contact</a></li>
-					</ul>
-				</nav>
-				<footer>
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/in/princewillegbujor/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="https://github.com/Elprinz1" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>				
-						<li><a href="mailto:princewill.egbujor@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-				</footer>
-			</section>
+  <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-[#1a1815] focus:px-4 focus:py-2 focus:text-[#f4f1ec]"
+      >Skip to content</a
+    >
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- ── Nav ──────────────────────────────────────────────────────────── -->
+    <header
+      data-nav
+      class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-500"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-8 py-5"
+        aria-label="Primary"
+      >
+        <a href="#top" class="serif text-xl font-semibold">Princewill Egbujor</a>
 
-				<!-- Main -->
-					<div id="main">
+        <ul class="hidden gap-9 text-sm md:flex">
+          <li><a data-navlink href="#expertise">Expertise</a></li>
+          <li><a data-navlink href="#work">Impact</a></li>
+          <li><a data-navlink href="#projects">Projects</a></li>
+          <li><a data-navlink href="#about">About</a></li>
+          <li><a data-navlink href="#contact">Contact</a></li>
+        </ul>
 
-						<!-- One -->
-							<section id="one">
-								<!-- <div class="image main" data-position="center">
-									<img src="images/banner.jpg" alt="" />
-								</div> -->
-								<div class="container">
-									<header class="major">
-										<h2>A Process Data Scientist</h2>
-										<p>Dissecting complex processes using data</p>
-									</header>
-									<p>I am a Data Scientist with a combined experience of over 12 years in process, project, and data engineering. I am all about using the power of data, to bridge the gap between complex processes.</p>
-									<p>My experience in process & project engineering has given me a unique perspective on how to approach data science problems. I have a strong understanding of the processes that generate data and how to use that data to optimize those processes.</p>
-									<p>Currently building machine learning solutions at TruckX using skills from Advanced Machine Learning, Distributed Data Systems, Data Structures & Algorithms, and Relational Databases.</p>
-									<a href="https://www.linkedin.com/in/princewillegbujor/" target="_blank" class="icon brands fa-linkedin" style="font-size: 30px; margin-right: 20px;"><span class="label">Linkedin</span></a>
-									<a href="https://github.com/Elprinz1" target="_blank" class="icon brands fa-github" style="font-size: 30px; margin-right: 20px;"><span class="label">Github</span></a>
-									<a href="Princewill_Egbujor_resume.pdf" download="resume" target="_blank" class="button primary resize-button" onclick="gtag('event', 'click', {'event_category' : 'button', 'event_label' : 'View Resume'});">View Resume</a>
-								</div>
-							</section>
+        <div class="flex items-center gap-5">
+          <button
+            data-menu-toggle
+            type="button"
+            class="grid size-9 place-items-center rounded-lg border border-[#1a1815]/20 md:hidden"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <svg
+              class="size-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+            >
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
 
-						<!-- Two -->
-							<section id="two">
-								<div class="container">
-									<h3>Skills & Competencies</h3>
-									<p>Take a look at my skills and expertise encompassing data engineering, data science, and machine learning, honed through practical application across diverse technologies and data-centric initiatives.</p>
-									<ul class="feature-icons">
-										<li class="icon solid fa-code" style="margin-bottom: 0;"><h4>Programming Languages</h4></li>
-											<p >
-												Proficient in Python, SQL, NoSQL, HTML, and Linux.
-											</p>
-										<li class="icon solid fa-chart-bar" style="margin-bottom: 0;"><h4>Visualization</h4></li>
-											<p>
-												Skilled in advanced visualization tools including Tableau, PowerBI, Looker, Excel, PowerPoint, Airflow.
-											</p>
-										<li class="icon solid fa-cogs" style="margin-bottom: 0;"><h4>Machine Learning</h4></li>
-											<p>
-												Knowledge of Regression, Classification, Supervised & Unsupervised Deep Learning, NLP, Transformers, and Large Language Models (LLM) 
-											</p>
-										<li class="icon solid fa-database" style="margin-bottom: 0;"><h4>Databases and Big Data</h4></li>
-											<p>
-												Experience with Spark, Postgres, MySQL,  MongoDB, ETL, and Data Warehousing.
-											</p>
-										<li class="icon solid fa-cloud" style="margin-bottom: 0;"><h4>Cloud & MLOps</h4></li>
-											<p>
-												Experience with AWS, GCP tools such as Storage, BigQuery, Dataproc and Dataflow. Also, proficient in Docker, Kubernetes, Flask, Streamlit, and CI/CD.
-											</p>
-										<li class="icon solid fa-toolbox" style="margin-bottom: 0;"><h4>Libraries & Framework</h4></li>
-											<p>
-												Proficient with Pandas, Numpy, Scikit-learn, TensorFlow, Keras, PyTorch, Hugging Face, Matplotlib, Seaborn, Spacy, SciPy, Selenium.
-											</p>
-										<li class="icon solid fa-laptop" style="margin-bottom: 0;"><h4>Web Experimentation</h4></li>
-											<p>
-												Experience with Causal Inference, A/B Testing, Hypothesis testing, Statistical Inference, Quantitative Analysis, Experimental Design.
-											</p>
-										<li class="icon solid fa-people-carry" style="margin-bottom: 0;"><h4>Soft Skills</h4></li>
-											<p>
-												Strong leadership, communication, problem-solving, and analytical skills. Ability to adapt quickly, and a great team player.
-											</p>
-									</ul>
-								</div>
-							</section>
-						<!-- Three -->
-						<section id="three">
-							<div class="container">
-								<h3>Education</h3>
-								<div class="degree-list">
-								   <div class="degree-item">
-									  <h4>M.S. in Data Science</h4>
-									  <p>
-										 <strong>University of San Francisco</strong> | Jul 2023 - June 2024
-									  </p>
-									  <p>
-										 <strong>Relevant Coursework:</strong>
-									  </p>
-									  <ul>
-										 <li>Advanced Machine Learning</li>
-										 <li>Distributed Data Systems</li>
-										 <li>Data Structures &amp; Algorithms</li>
-										 <li>Relational Databases</li>
-										 <li>Experiments in Data Science</li>
-										 <li>Linear Regression</li>
-									  </ul>
-								   </div>
-								   <hr>
-								   <div class="degree-item">
-									<h4>M.S. in Offshore Engineering</h4>
-									<p>
-									   <strong>University of PortHarcourt</strong> | Nov 2013 - April 2015
-									</p>
-								   <hr>
-								   <div class="degree-item">
-									  <h4>B.E. in Chemical Engineering</h4>
-									  <p>
-										 <strong>Federal University of Technology Owerri</strong> | March 2005 - March 2010
-									  </p>
-								   </div>
-								</div>
-							 </div>
-						</section>
+      <div
+        data-menu
+        class="hidden border-t border-[#1a1815]/12 bg-[#f4f1ec]/97 backdrop-blur md:hidden"
+      >
+        <ul class="mx-auto max-w-7xl px-8 py-3">
+          <li><a class="block py-2.5" href="#expertise">Expertise</a></li>
+          <li><a class="block py-2.5" href="#work">Impact</a></li>
+          <li><a class="block py-2.5" href="#projects">Projects</a></li>
+          <li><a class="block py-2.5" href="#about">About</a></li>
+          <li><a class="block py-2.5" href="#contact">Contact</a></li>
+          <li>
+            <a
+              class="block py-2.5 text-[#a8551f]"
+              href="./Princewill_Egbujor_Resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >Résumé ↗</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
 
-						<!-- Four -->
-							<section id="four">
-								<div class="container">
-									<h3>My Projects</h3>
-									<p>
-										Here are some of the projects I have worked on. They span across different domains and technologies, showcasing my ability to solve complex problems and deliver value through data-driven insights and solutions.
-									</p>
-									<div class="features">
-										<article>
-											<a href="https://github.com/Elprinz1/House-Price-Prediction" class="image" target="_blank"><img src="images/projects/price_prediction1.png" alt="" /></a>
-											<div class="inner">
-												<a href="https://github.com/Elprinz1/House-Price-Prediction" target="_blank" ><h4>Predicting House Prices in Barcelona</h4></a>
-												<p>This project focuses on predicting house prices in Barcelona, we delve deep into the realm of real estate analytics. Leveraging the power of cutting-edge gradient boosting algorithms such as CatBoost and XGBoost, alongside ensemble methods, we craft a robust predictive model capable of capturing intricate patterns and nuances within the housing market in Barcelona.</p>
-											</div>
-										</article>
-										<article>
-											<a href="https://github.com/Elprinz1/Sharp_Turn_Detection" class="image" target="_blank"><img src="images/projects/sharpturn.png" alt="" /></a>
-											<div class="inner">
-												<a href="https://github.com/Elprinz1/Sharp_Turn_Detection" target="_blank"><h4>Sharp Turn Detection Using GPS Data</h4></a>
-												<p>This project addresses the critical need for accident prevention by leveraging GPS data to detect sharp turns made by semi-trucks. By employing rule-based & advanced machine learning techniques, the provided Python code processes GPS data, meticulously analyzing the trucks's movements to identify instances of sharp turns based on significant changes in direction over time.</p>
-											</div>
-										</article>
-										<article>
-											<a href="https://github.com/Elprinz1/Geofence_ML" class="image" target="_blank"><img src="images/projects/geofence_ml.png" alt="" /></a>
-											<div class="inner">
-												<a href="https://github.com/Elprinz1/Geofence_ML" target="_blank"><h4>Geofence Recommender Project</h4></a>
-												<p>The geofence recommender is all about optimizing truck routes and stop locations, with a focus on Geofencing interesting areas and improving logistical efficiency through Machine Learning, data analysis and visualization</p>
-											</div>
-										</article>
-										<article>
-											<a href="https://github.com/Elprinz1/Job-Search-Customizer" class="image" target="_blank"><img src="images/projects/genAI.png" alt="" /></a>
-											<div class="inner">
-												<a href="https://github.com/Elprinz1/Job-Search-Customizer" target="_blank"><h4>Gen AI Job Search Customizer</h4></a>
-												<p>The Job-Search-Customizer project is an innovative application that showcases the power of natural language processing (NLP) techniques and large language models. By harnessing the capabilities of cutting-edge NLP technologies, this project facilitates interaction with, and analysis of textual data extracted from job postings.</p>
-											</div>
-										</article>
-									</div>
-								</div>
-							</section>
+    <main id="main">
+      <!-- ── Hero ───────────────────────────────────────────────────────── -->
+      <section id="top" class="px-8 pt-32 sm:pt-36">
+        <div class="mx-auto max-w-7xl">
+          <div class="rule grid items-center gap-14 pt-14 lg:grid-cols-[1.2fr_0.8fr]">
+            <div>
+              <h1
+                class="reveal serif mt-7 text-5xl font-semibold leading-[0.94] sm:text-7xl xl:text-[5.4rem]"
+              >
+                Measuring what<br />
+                <em class="font-normal italic text-[#a8551f]">actually</em> moves<br />
+                the business.
+              </h1>
 
-						<!-- Five -->
-							<section id="five">
-								<div class="container">
-									<h3>Contact Me</h3>
-									<p style="margin-bottom: 0.7em;">You can reach me through any of the following channels</p>
-									<div class="contact_display">
-										<h4 class="icon solid fa-envelope"><span class="label_display"><a href="mailto:princewill.egbujor@gmail.com">princewill.egbujor@gmail.com</a></span></h4> 
-										<h4 class="icon solid fa-phone"><span class="label_display">+1 (510) 224 1232</span></h4>
-										<h4 class="icon solid fa-map-marker-alt"><span class="label_display">San Francisco, CA, United States</span></h4>
-									</div>
-									<p style="margin-bottom: 0.5em;">You can also send me a direct message</p>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</div>
-							</section>
-						
-					</div>
+              <p class="reveal mt-9 max-w-xl text-lg leading-relaxed text-[#4a443c]">
+                Data Scientist working across marketing analytics, product experimentation, and
+                applied generative AI — building the measurement, then making the answer legible to
+                whoever has to act on it.
+              </p>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; Princewill Egbujor. All rights reserved.</li>
-							</ul>
-						</div>
-					</section>
+              <div class="reveal mt-11 flex flex-wrap items-center gap-8">
+                <a
+                  href="#contact"
+                  class="rounded-full bg-[#1a1815] px-8 py-3.5 text-sm font-medium text-[#f4f1ec] transition hover:bg-[#a8551f]"
+                >
+                  Get in touch
+                </a>
+                <a
+                  href="#projects"
+                  class="text-sm underline decoration-1 underline-offset-4 transition hover:text-[#a8551f]"
+                >
+                  Selected projects
+                </a>
+                <a
+                  href="./Princewill_Egbujor_Resume.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-sm underline decoration-1 underline-offset-4 transition hover:text-[#a8551f]"
+                >
+                  Download Resume
+                </a>
+              </div>
+            </div>
 
-			</div>
+            <figure class="reveal relative">
+              <div class="oval">
+                <img
+                  src="./profile-portrait.jpg"
+                  alt="Princewill Egbujor"
+                  width="1050"
+                  height="1400"
+                />
+              </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+              <figcaption class="seal absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-6">
+                <span class="serif block text-4xl font-semibold leading-none sm:text-5xl">
+                  10<span class="text-[#a8551f]">+</span>
+                </span>
+                <span class="label mt-2 block">Years<br />in data</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
 
-	</body>
+      <!-- ── Company marquee ────────────────────────────────────────────── -->
+      <section
+        aria-label="Companies worked with"
+        class="border-y border-[#1a1815]/12 bg-[#eae5dc]/60 py-11"
+      >
+        <p class="label mb-8 text-center">Where I've worked and studied</p>
+
+        <div class="marquee">
+          <div data-marquee class="marquee-track">
+            <div class="logo-item flex shrink-0 items-center px-12">
+              <img class="logo-mark" src="./logos/apple.png" alt="Apple" width="135" height="160" />
+            </div>
+            <div class="logo-item flex shrink-0 items-center px-12">
+              <img
+                class="logo-mark"
+                src="./logos/mypop.png"
+                alt="MyPOP.ai"
+                width="445"
+                height="160"
+              />
+            </div>
+            <div class="logo-item flex shrink-0 items-center px-12">
+              <img
+                class="logo-mark"
+                src="./logos/truckx.png"
+                alt="TruckX"
+                width="454"
+                height="160"
+              />
+            </div>
+            <div class="logo-item flex shrink-0 items-center px-12">
+              <img
+                class="logo-mark"
+                src="./logos/dangote.png"
+                alt="Dangote Industries"
+                width="327"
+                height="160"
+              />
+            </div>
+            <div class="logo-item flex shrink-0 items-center px-12">
+              <img
+                class="logo-mark logo-mark--stacked"
+                src="./logos/usf.png"
+                alt="University of San Francisco"
+                width="245"
+                height="160"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Expertise ──────────────────────────────────────────────────── -->
+      <section id="expertise" class="px-8 py-24">
+        <div class="mx-auto max-w-7xl">
+          <p class="reveal label">01 — Expertise</p>
+          <h2 class="reveal serif mt-6 max-w-3xl text-4xl font-semibold leading-[1.05] sm:text-6xl">
+            Three things I do <em class="font-normal italic text-[#a8551f]">deeply</em>
+          </h2>
+
+          <div class="mt-16 grid gap-px bg-[#1a1815]/14 lg:grid-cols-3">
+            <article class="reveal bg-[#f4f1ec] p-9">
+              <h3 class="serif mt-5 text-3xl font-semibold">Marketing Analytics</h3>
+              <p class="mt-5 leading-relaxed text-[#4a443c]">
+                Measuring what marketing actually does — and where the next dollar should go. The
+                core of my work at Apple.
+              </p>
+              <ul class="rule mt-8 space-y-3.5 pt-7 text-[15px]">
+                <li class="flex gap-4">
+                  <span class="label pt-1">01</span> Brand relevancy measurement
+                </li>
+                <li class="flex gap-4"><span class="label pt-1">02</span> Causal inference</li>
+                <li class="flex gap-4">
+                  <span class="label pt-1">03</span> Marketing mix modeling
+                </li>
+                <li class="flex gap-4"><span class="label pt-1">04</span> Attribution modeling</li>
+                <li class="flex gap-4">
+                  <span class="label pt-1">05</span> Structural equation modeling
+                </li>
+                <li class="flex gap-4">
+                  <span class="label pt-1">06</span> Predictive LTV &amp; segmentation
+                </li>
+              </ul>
+              <p class="mt-8 text-sm italic text-[#8a7f70]">
+                Replaced manual attribution with a defensible budget-allocation framework.
+              </p>
+            </article>
+
+            <article class="reveal bg-[#f4f1ec] p-9">
+              <h3 class="serif mt-5 text-3xl font-semibold">Product Analytics</h3>
+              <p class="mt-5 leading-relaxed text-[#4a443c]">
+                Turning product questions into experiments that answer them, with enough power that
+                the result gets believed.
+              </p>
+              <ul class="rule mt-8 space-y-3.5 pt-7 text-[15px]">
+                <li class="flex gap-4">
+                  <span class="label pt-1">01</span> A/B testing &amp; experiment design
+                </li>
+                <li class="flex gap-4"><span class="label pt-1">02</span> Statistical inference</li>
+                <li class="flex gap-4">
+                  <span class="label pt-1">03</span> Customer behaviour modeling
+                </li>
+                <li class="flex gap-4">
+                  <span class="label pt-1">04</span> Churn &amp; retention modeling
+                </li>
+                <li class="flex gap-4">
+                  <span class="label pt-1">05</span> Geospatial &amp; telemetry ML
+                </li>
+                <li class="flex gap-4">
+                  <span class="label pt-1">06</span> Product metric frameworks
+                </li>
+              </ul>
+              <p class="mt-8 text-sm italic text-[#8a7f70]">
+                200% engagement lift at TruckX; 92% churn accuracy at Dangote.
+              </p>
+            </article>
+
+            <article class="reveal bg-[#f4f1ec] p-9">
+              <h3 class="serif mt-5 text-3xl font-semibold">Generative AI</h3>
+              <p class="mt-5 leading-relaxed text-[#4a443c]">
+                Agentic systems that hold up in production — retrieval that actually retrieves,
+                pipelines that don't quietly degrade.
+              </p>
+              <ul class="rule mt-8 space-y-3.5 pt-7 text-[15px]">
+                <li class="flex gap-4">
+                  <span class="label pt-1">01</span> Multi-agent architecture
+                </li>
+                <li class="flex gap-4">
+                  <span class="label pt-1">02</span> LangChain &amp; LangGraph
+                </li>
+                <li class="flex gap-4">
+                  <span class="label pt-1">03</span> RAG &amp; semantic retrieval
+                </li>
+                <li class="flex gap-4"><span class="label pt-1">04</span> LLM evaluation</li>
+                <li class="flex gap-4">
+                  <span class="label pt-1">05</span> NLP &amp; sentiment analysis
+                </li>
+                <li class="flex gap-4"><span class="label pt-1">06</span> Azure AI Studio</li>
+              </ul>
+              <p class="mt-8 text-sm italic text-[#8a7f70]">
+                30% error reduction by redesigning retrieval and similarity scoring.
+              </p>
+            </article>
+          </div>
+
+          <div class="reveal rule mt-11 flex flex-wrap items-baseline gap-x-9 gap-y-4 pt-8">
+            <p class="label">Built on</p>
+            <p class="serif text-xl leading-relaxed text-[#4a443c]">
+              Python · SQL · PySpark · Databricks · Airflow · BigQuery · PostgreSQL · Azure · AWS ·
+              GCP · Tableau · PowerBI · Plotly · Streamlit
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Impact ─────────────────────────────────────────────────────── -->
+      <!-- Deliberately not a CV. Each cell is one outcome, led by the number,
+           with the employer as a footnote rather than the headline. -->
+      <section id="work" class="border-t border-[#1a1815]/12 bg-[#eae5dc]/45 px-8 py-24">
+        <div class="mx-auto max-w-7xl">
+          <p class="reveal label">02 — Impact</p>
+          <h2 class="reveal serif mt-5 text-4xl font-semibold sm:text-6xl">
+            What the work produced
+          </h2>
+          <p class="reveal mt-6 max-w-2xl text-lg text-[#4a443c]">
+            A decade of measurement problems, and what changed because of them.
+          </p>
+
+          <div
+            class="reveal mt-14 grid border-l border-t border-[#1a1815]/12 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            <!-- Current role leads, and carries no invented metrics. -->
+            <article
+              class="flex flex-col justify-between border-b border-r border-[#1a1815]/12 bg-[#1a1815] p-9 text-[#f4f1ec] lg:col-span-2"
+            >
+              <div>
+                <p class="label text-[#c9a882]">Now — Senior Data Scientist</p>
+                <h3 class="serif mt-5 text-3xl font-semibold leading-tight sm:text-4xl">
+                  Brand relevancy measurement across Apple Services
+                </h3>
+              </div>
+              <ul class="mt-8 space-y-3 text-[15px] leading-relaxed text-[#f4f1ec]/75">
+                <li>Attribution framework</li>
+                <li>Model Optimization</li>
+                <li>Real-time brand health dashboards fed by a cloud data warehouse</li>
+              </ul>
+              <p class="label mt-9 text-[#f4f1ec]/45">Apple (contract) · 2025 — Present</p>
+            </article>
+
+            <article class="cell border-b border-r border-[#1a1815]/12 p-9">
+              <p class="serif text-5xl font-semibold">200<span class="text-[#a8551f]">%</span></p>
+              <h3 class="mt-4 text-lg font-semibold">Engagement lift</h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-[#4a443c]">
+                Product experimentation strategy and A/B tests on feature changes.
+              </p>
+              <p class="label mt-7">TruckX</p>
+            </article>
+
+            <article class="cell border-b border-r border-[#1a1815]/12 p-9">
+              <p class="serif text-5xl font-semibold">30<span class="text-[#a8551f]">%</span></p>
+              <h3 class="mt-4 text-lg font-semibold">Fewer errors</h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-[#4a443c]">
+                A RAG service on Azure AI Studio, rebuilt around better retrieval and similarity
+                scoring.
+              </p>
+              <p class="label mt-7">MyPOP.ai</p>
+            </article>
+
+            <article class="cell border-b border-r border-[#1a1815]/12 p-9">
+              <p class="serif text-5xl font-semibold">92<span class="text-[#a8551f]">%</span></p>
+              <h3 class="mt-4 text-lg font-semibold">Churn accuracy</h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-[#4a443c]">
+                An XGBoost model identifying customers at risk of leaving before they did.
+              </p>
+              <p class="label mt-7">Dangote Industries</p>
+            </article>
+
+            <article class="cell border-b border-r border-[#1a1815]/12 p-9">
+              <p class="serif text-5xl font-semibold">40<span class="text-[#a8551f]">%</span></p>
+              <h3 class="mt-4 text-lg font-semibold">Route optimisation</h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-[#4a443c]">
+                Sharp-turn detection engineered end to end from raw GPS telemetry.
+              </p>
+              <p class="label mt-7">TruckX</p>
+            </article>
+
+            <article class="cell border-b border-r border-[#1a1815]/12 p-9">
+              <p class="serif text-5xl font-semibold">17<span class="text-[#a8551f]">%</span></p>
+              <h3 class="mt-4 text-lg font-semibold">Targeting efficiency</h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-[#4a443c]">
+                Customer segmentation models built on K-means clustering.
+              </p>
+              <p class="label mt-7">Dangote Industries</p>
+            </article>
+
+            <article class="cell border-b border-r border-[#1a1815]/12 p-9">
+              <p class="serif text-5xl font-semibold">8<span class="text-[#a8551f]">%</span></p>
+              <h3 class="mt-4 text-lg font-semibold">Retention lift</h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-[#4a443c]">
+                A predictive customer-lifetime-value framework built on RFM metrics.
+              </p>
+              <p class="label mt-7">Dangote Industries</p>
+            </article>
+
+            <article class="cell border-b border-r border-[#1a1815]/12 p-9">
+              <p class="serif text-5xl font-semibold">4,000<span class="text-[#a8551f]">+</span></p>
+              <h3 class="mt-4 text-lg font-semibold">People supported</h3>
+              <p class="mt-3 text-[15px] leading-relaxed text-[#4a443c]">
+                A Python and SQL People Analytics platform behind day-to-day HR decisions.
+              </p>
+              <p class="label mt-7">Dangote Industries</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Projects ───────────────────────────────────────────────────── -->
+      <!-- Deployed apps lead: a running URL is stronger evidence than a notebook. -->
+      <section id="projects" class="px-8 py-24">
+        <div class="mx-auto max-w-7xl">
+          <p class="reveal label">03 — Projects</p>
+          <h2 class="reveal serif mt-6 text-4xl font-semibold sm:text-6xl">A few projects</h2>
+
+          <div class="mt-14 grid gap-px bg-[#1a1815]/14 md:grid-cols-2 xl:grid-cols-3">
+            <article
+              class="reveal group flex flex-col bg-[#f4f1ec] p-9 transition hover:bg-[#eae5dc]/70"
+            >
+              <div class="flex items-center justify-between gap-4">
+                <p class="label">NLP · Speech</p>
+                <span class="live-badge">Live</span>
+              </div>
+              <h3 class="serif mt-5 text-2xl font-semibold">speechScribe</h3>
+              <p class="mt-4 flex-1 leading-relaxed text-[#4a443c]">
+                A transcription service you can actually use: upload an audio file and get text
+                back. Built and deployed as a web app.
+              </p>
+              <p class="label mt-7">Python · Speech-to-text · Flask</p>
+              <div class="mt-5 flex flex-wrap gap-6 text-sm">
+                <a
+                  href="https://speechscribe.fly.dev/"
+                  target="_blank"
+                  rel="noopener"
+                  class="font-medium underline decoration-1 underline-offset-4 transition hover:text-[#a8551f]"
+                  >Open the app ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="reveal group flex flex-col bg-[#f4f1ec] p-9 transition hover:bg-[#eae5dc]/70"
+            >
+              <div class="flex items-center justify-between gap-4">
+                <p class="label">NLP · Recommenders</p>
+                <span class="live-badge">Live</span>
+              </div>
+              <h3 class="serif mt-5 text-2xl font-semibold">insightRecs</h3>
+              <p class="mt-4 flex-1 leading-relaxed text-[#4a443c]">
+                An article recommender running on sentence embeddings (SBERT), surfacing related
+                reading by semantic similarity instead of keyword overlap.
+              </p>
+              <p class="label mt-7">SBERT · Sentence embeddings · Flask</p>
+              <div class="mt-5 flex flex-wrap gap-6 text-sm">
+                <a
+                  href="https://insightrecs.fly.dev/"
+                  target="_blank"
+                  rel="noopener"
+                  class="font-medium underline decoration-1 underline-offset-4 transition hover:text-[#a8551f]"
+                  >Open the app ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="reveal group flex flex-col bg-[#f4f1ec] p-9 transition hover:bg-[#eae5dc]/70"
+            >
+              <div class="flex items-center justify-between gap-4">
+                <p class="label">Deep Learning · Time Series</p>
+              </div>
+              <h3 class="serif mt-5 text-2xl font-semibold">futureSight</h3>
+              <p class="mt-4 flex-1 leading-relaxed text-[#4a443c]">
+                Leveraging Long Short-Term Memory (LSTM) neural network to forecast time series
+                data. A Flask app.
+              </p>
+              <p class="label mt-7">PyTorch · LSTM · Flask · Pandas</p>
+              <div class="mt-5 flex flex-wrap gap-6 text-sm">
+                <a
+                  href="https://github.com/Elprinz1/LSTM-Time-Series-Forecasting-Flask-App"
+                  target="_blank"
+                  rel="noopener"
+                  class="underline decoration-1 underline-offset-4 transition hover:text-[#a8551f]"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="reveal group flex flex-col bg-[#f4f1ec] p-9 transition hover:bg-[#eae5dc]/70"
+            >
+              <div class="flex items-center justify-between gap-4">
+                <p class="label">Generative AI · RAG</p>
+              </div>
+              <h3 class="serif mt-5 text-2xl font-semibold">
+                RAG on Azure Cognitive Vector Search
+              </h3>
+              <p class="mt-4 flex-1 leading-relaxed text-[#4a443c]">
+                Retrieval-augmented generation over audio transcriptions — index configuration,
+                embedding generation, and semantic search wired into a context-aware answer
+                pipeline.
+              </p>
+              <p class="label mt-7">Azure Cognitive Search · Embeddings · Python</p>
+              <div class="mt-5 flex flex-wrap gap-6 text-sm">
+                <a
+                  href="https://github.com/Elprinz1/RAG-Using-Azure-Cognitive-Vector-Search"
+                  target="_blank"
+                  rel="noopener"
+                  class="underline decoration-1 underline-offset-4 transition hover:text-[#a8551f]"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="reveal group flex flex-col bg-[#f4f1ec] p-9 transition hover:bg-[#eae5dc]/70"
+            >
+              <div class="flex items-center justify-between gap-4">
+                <p class="label">Time Series · Forecasting</p>
+              </div>
+              <h3 class="serif mt-5 text-2xl font-semibold">Energy Demand Forecast</h3>
+              <p class="mt-4 flex-1 leading-relaxed text-[#4a443c]">
+                Forecasting global active power consumption from historical usage, comparing
+                classical and additive approaches over the same horizon.
+              </p>
+              <p class="label mt-7">ARIMA · Prophet · Databricks</p>
+              <div class="mt-5 flex flex-wrap gap-6 text-sm">
+                <a
+                  href="https://github.com/Elprinz1/Energy-Demand-Forecast"
+                  target="_blank"
+                  rel="noopener"
+                  class="underline decoration-1 underline-offset-4 transition hover:text-[#a8551f]"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+            <article
+              class="reveal group flex flex-col bg-[#f4f1ec] p-9 transition hover:bg-[#eae5dc]/70"
+            >
+              <div class="flex items-center justify-between gap-4">
+                <p class="label">Analytics · Segmentation</p>
+              </div>
+              <h3 class="serif mt-5 text-2xl font-semibold">
+                Customer Behaviour &amp; RFM Analysis
+              </h3>
+              <p class="mt-4 flex-1 leading-relaxed text-[#4a443c]">
+                RFM segmentation profiling how customers actually spend — recency, frequency and
+                monetary value turned into segments a marketing team can act on.
+              </p>
+              <p class="label mt-7">Python · SQL · RFM · Clustering</p>
+              <div class="mt-5 flex flex-wrap gap-6 text-sm">
+                <a
+                  href="https://github.com/Elprinz1/Customer-Behaviour-Analysis"
+                  target="_blank"
+                  rel="noopener"
+                  class="underline decoration-1 underline-offset-4 transition hover:text-[#a8551f]"
+                  >GitHub ↗</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── About ──────────────────────────────────────────────────────── -->
+      <section id="about" class="border-t border-[#1a1815]/12 px-8 py-24">
+        <div class="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.75fr_1.25fr]">
+          <div class="reveal">
+            <p class="label">04 — About</p>
+            <div class="oval mt-9 w-56">
+              <img src="./profile-square.jpg" alt="Princewill Egbujor" width="900" height="900" />
+            </div>
+          </div>
+
+          <div class="reveal">
+            <h2 class="serif text-4xl font-semibold leading-[1.08] sm:text-5xl">
+              A data scientist who delivers.
+            </h2>
+            <div class="mt-8 space-y-5 text-lg leading-relaxed text-[#4a443c]">
+              <p>
+                I work where measurement is genuinely hard — marketing ecosystems with no clean
+                control group, products where the metric everyone quotes isn't the one that matters,
+                and LLM systems that look fine until they don't.
+              </p>
+              <p>
+                Today that means brand relevancy and marketing measurement — the pipelines and
+                statistical models that connect marketing activity to business impact. Along the way
+                I've architected multi-agent GenAI systems, owned product experimentation end to
+                end, and spent the better part of a decade turning customer and operational data
+                into decisions people actually made.
+              </p>
+              <p>
+                What ties it together is a bias toward the part most people skip: making the answer
+                legible to whoever has to act on it.
+              </p>
+            </div>
+            <p class="label mt-9">M.S. Data Science · University of San Francisco · 2024</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Contact ────────────────────────────────────────────────────── -->
+      <section id="contact" class="border-t border-[#1a1815]/12 bg-[#eae5dc]/45 px-8 py-28">
+        <div class="mx-auto max-w-7xl">
+          <p class="reveal label">05 — Contact</p>
+          <h2 class="reveal serif mt-6 max-w-3xl text-5xl font-semibold leading-[1.02] sm:text-7xl">
+            Let's talk about <em class="font-normal italic text-[#a8551f]">working together.</em>
+          </h2>
+          <p class="reveal mt-8 max-w-xl text-lg text-[#4a443c]">
+            Open to conversations about data science & analytics, marketing measurement, experimentation, and applied ML.
+            Email is fastest.
+          </p>
+
+          <div class="reveal mt-11 flex flex-wrap items-center gap-8">
+            <a
+              href="mailto:princewill.egbujor@gmail.com"
+              class="rounded-full bg-[#1a1815] px-8 py-3.5 text-sm font-medium text-[#f4f1ec] transition hover:bg-[#a8551f]"
+            >
+              princewill.egbujor@gmail.com
+            </a>
+            <a
+              href="https://www.linkedin.com/in/princewillegbujor/"
+              target="_blank"
+              rel="noopener"
+              class="text-sm underline decoration-1 underline-offset-4 transition hover:text-[#a8551f]"
+              >LinkedIn ↗</a
+            >
+            <a
+              href="https://github.com/Elprinz1"
+              target="_blank"
+              rel="noopener"
+              class="text-sm underline decoration-1 underline-offset-4 transition hover:text-[#a8551f]"
+              >GitHub ↗</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-[#1a1815]/12 px-8 py-10">
+      <div class="mx-auto max-w-7xl">
+        <p class="label">© <span data-year>2026</span></p>
+        <p class="label mt-2">Princewill Egbujor</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

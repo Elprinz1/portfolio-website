@@ -1,0 +1,151 @@
+# The whole pipeline lives in one file so the dependency graph is readable at a
+# glance. Jobs run in this order:
+#
+#   quality ──> build ──┬──> deploy-pages
+#                       └──> deploy-fly
+#
+# `quality` and `build` run on every push and pull request. The two deploy jobs
+# are gated on `github.event_name == 'push'`, so pull requests are verified but
+# never published.
+
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Cancel an in-flight run when new commits land on the same branch. Without this,
+# two pushes a minute apart race each other to deploy and the older one can win.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '22'
+
+jobs:
+  # ── Stage 1: is the code well-formed? ────────────────────────────────────
+  # Every check here is independent, so they run as one job to avoid paying the
+  # npm-install cost four times. `--if-present` is deliberately not used: a
+  # missing script should fail loudly rather than silently pass.
+  quality:
+    name: Quality checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          # Caches ~/.npm keyed on package-lock.json, turning a ~40s install
+          # into a few seconds on unchanged dependencies.
+          cache: npm
+
+      # `npm ci` (not `npm install`) installs exactly what the lockfile pins and
+      # fails if package.json and the lockfile disagree. Reproducible by design.
+      - run: npm ci
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm test
+
+  # ── Stage 2: produce the artifact ────────────────────────────────────────
+  # Built exactly once. Both deploy jobs consume this same output, so what runs
+  # on Fly.io is byte-identical to what runs on GitHub Pages.
+  build:
+    name: Build
+    needs: quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      - name: Upload dist
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
+
+  # ── Stage 3a: publish to GitHub Pages ────────────────────────────────────
+  deploy-pages:
+    name: Deploy to GitHub Pages
+    needs: build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+    # Least-privilege token. `pages: write` publishes; `id-token: write` lets
+    # the Pages service verify this run via OIDC instead of a stored secret.
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    # Surfaces the live URL on the run summary and in the repo's environment list.
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Download dist
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      # Repackages dist/ into the tarball format the Pages service expects.
+      - name: Package for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # ── Stage 3b: publish to Fly.io ──────────────────────────────────────────
+  # Same dist/, wrapped in a Caddy container. Fly builds the image remotely, so
+  # no Docker daemon is needed on the runner.
+  deploy-fly:
+    name: Deploy to Fly.io
+    needs: build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment:
+      name: fly
+      url: https://princewill-portfolio.fly.dev
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download dist
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+
+      # --remote-only ships the build context to Fly's builder.
+      - name: Deploy
+        run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
